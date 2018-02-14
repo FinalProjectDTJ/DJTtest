@@ -63,13 +63,13 @@ public class TestForProject {
 
         redOne.click();
                 
-        waitTime(5000);
+        waitTime(3000);
 
         WebElement buyBtn = driver.findElement(By.className("buy-now-btn"));
 
         buyBtn.click();
 
-        waitTime(5000);
+        waitTime(2000);
 
         driver.switchTo().window(tabs2.get(0));
         driver.close();
@@ -79,11 +79,11 @@ public class TestForProject {
         tabs2 = new ArrayList<String> (driver.getWindowHandles());
         driver.switchTo().window(tabs2.get(0));
 
-        waitTime(5000);
+        waitTime(8000);
 
         WebElement emailBox = driver.findElement(By.name("email"));
 
-        emailBox.sendKeys("student@nu.edu");
+        emailBox.sendKeys("sen635@nu.edu");
 
         waitTime(1000);
 
@@ -100,30 +100,35 @@ public class TestForProject {
         waitTime(1000);
 
         WebElement mySelectElm = driver.findElement(By.cssSelector("select[class='ui-textfield ui-textfield-system']"));
-        		//driver.findElement(By.className("ui-textfield ui-textfield-system")); 
         Select mySelect= new Select(mySelectElm);
         mySelect.selectByValue("California");
 
-        //waitTime(1000);
+        waitTime(5000);
 
-        //WebElement cityBox = driver.findElement(By.name("city"));
-
-        //cityBox.sendKeys("San Diego");
-
-        //waitTime(1000);
-
-        //WebElement zipBox = driver.findElement(By.name("zip"));
-
-        //zipBox.sendKeys("92123");
-
-        waitTime(1000);
-
-        WebElement myCitySelectElm = driver.findElement(By.cssSelector("select[class='select[class='ui-textfield ui-textfield-system sa-error-field']")); //ui-textfield ui-textfield-system sa-error-field
-        		//driver.findElement(By.className("ui-textfield ui-textfield-system")); 
+        WebElement myCitySelectElm = driver.findElement(By.xpath("//div/input[@name='city']/following::select"));
         Select myCitySelect= new Select(myCitySelectElm);
         myCitySelect.selectByValue("San diego");
 
+        waitTime(1000);
 
+        WebElement zipBox = driver.findElement(By.name("zip"));
+
+        zipBox.sendKeys("92123");
+
+        waitTime(1000);
+
+        WebElement phoneBox = driver.findElement(By.name("mobileNo"));
+
+        phoneBox.sendKeys("4085551234");
+
+        waitTime(3000);
+
+        WebElement orderOne = driver.findElement(By.className("ui-button ui-button-primary ui-button-medium sa-confirm"));
+        //WebElement orderOne = driver.findElement(By.className("ui-button ui-button-primary ui-button-medium sa-confirm disabled"));
+
+        orderOne.click();
+
+        waitTime(5000);
 
     }
     
