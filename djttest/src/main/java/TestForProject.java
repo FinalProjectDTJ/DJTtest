@@ -104,21 +104,21 @@ public class TestForProject {
         Select mySelect= new Select(mySelectElm);
         mySelect.selectByValue("California");
 
+        //waitTime(1000);
+
+        //WebElement cityBox = driver.findElement(By.name("city"));
+
+        //cityBox.sendKeys("San Diego");
+
+        //waitTime(1000);
+
+        //WebElement zipBox = driver.findElement(By.name("zip"));
+
+        //zipBox.sendKeys("92123");
+
         waitTime(1000);
 
-        WebElement cityBox = driver.findElement(By.name("city"));
-
-        cityBox.sendKeys("San Diego");
-
-        waitTime(1000);
-
-        WebElement zipBox = driver.findElement(By.name("zip"));
-
-        zipBox.sendKeys("92123");
-
-        waitTime(1000);
-
-        WebElement myCitySelectElm = driver.findElement(By.cssSelector("select[class='ui-textfield ui-textfield-system sa-error-field']"));
+        WebElement myCitySelectElm = driver.findElement(By.cssSelector("select[class='select[class='ui-textfield ui-textfield-system sa-error-field']")); //ui-textfield ui-textfield-system sa-error-field
         		//driver.findElement(By.className("ui-textfield ui-textfield-system")); 
         Select myCitySelect= new Select(myCitySelectElm);
         myCitySelect.selectByValue("San diego");
