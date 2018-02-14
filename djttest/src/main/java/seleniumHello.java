@@ -34,7 +34,7 @@ public class seleniumHello {
 
 
         //关闭驱动
-        driver.close();
+        //driver.close();
 
 
     }

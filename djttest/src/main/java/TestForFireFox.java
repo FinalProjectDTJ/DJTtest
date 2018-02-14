@@ -15,7 +15,7 @@ public class TestForFireFox  {
         // 让浏览器访问 Baidu
         driver.get("http://www.baidu.com");
         // 用下面代码也可以实现
-        // driver.navigate().to("http://www.baidu.com");
+         driver.navigate().to("http://www.baidu.com");
 
         // 获取 网页的 title
         System.out.println("1 Page title is: " + driver.getTitle());
