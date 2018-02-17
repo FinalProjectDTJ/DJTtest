@@ -1,14 +1,17 @@
 import java.util.ArrayList;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 
-public class TestForProject {
+public class CheckOutTest {
 
     public static void main(String[] args) {
+
         System.setProperty("webdriver.firefox.bin", "C:\\Program Files\\Mozilla Firefox\\firefox.exe"); 
 
         WebDriver driver = new FirefoxDriver();
@@ -24,7 +27,36 @@ public class TestForProject {
         WebElement xxx = driver.findElement(By.className("close-layer"));
         xxx.click();
         
-        waitTime(3000);
+        waitTime(5000);
+
+        System.out.println("This page title is: " + driver.getTitle());
+
+        WebElement joinIt = driver.findElement(By.cssSelector("a[data-role='sign-link']"));
+
+        joinIt.click();
+        
+        waitTime(5000);
+
+        Actions action = new Actions(driver);
+        
+        for(int i=0; i<3; i++) {
+        	action.sendKeys(Keys.TAB).perform();
+        }
+        action.sendKeys("sen632@nu.edu");
+        waitTime(1000);
+        action.sendKeys(Keys.TAB).perform();
+        
+        waitTime(1000);
+        
+        WebElement passBox = driver.switchTo().activeElement();
+        passBox.sendKeys("abc12345");
+
+        waitTime(1000);
+        action.sendKeys(Keys.TAB).perform();
+        waitTime(1000);
+        action.sendKeys(Keys.ENTER).perform();  	
+        
+        waitTime(20000);
         
         WebElement txtbox = driver.findElement(By.name("SearchText"));
 
@@ -59,36 +91,23 @@ public class TestForProject {
                 
         waitTime(3000);
 
-        WebElement redOne = driver.findElement(By.id("sku-1-10"));
-
-        redOne.click();
-                
-        waitTime(3000);
-
         WebElement buyBtn = driver.findElement(By.className("buy-now-btn"));
 
         buyBtn.click();
 
         waitTime(2000);
 
-        driver.switchTo().window(tabs2.get(0));
+/*        driver.switchTo().window(tabs2.get(0));
         driver.close();
 
         System.out.println("Close the main page of Aliexpress");
 
         tabs2 = new ArrayList<String> (driver.getWindowHandles());
         driver.switchTo().window(tabs2.get(0));
-
-        waitTime(8000);
-
-        WebElement emailBox = driver.findElement(By.name("email"));
-
-        emailBox.sendKeys("sen635@nu.edu");
-
-        waitTime(1000);
+*/
+        waitTime(5000);
 
         WebElement contactPerson = driver.findElement(By.name("contactPerson"));
-
         contactPerson.sendKeys("John Doe");
 
         waitTime(1000);
@@ -124,16 +143,11 @@ public class TestForProject {
         waitTime(3000);
 
         WebElement orderOne = driver.findElement(By.className("ui-button ui-button-primary ui-button-medium sa-confirm"));
-        //WebElement orderOne = driver.findElement(By.className("ui-button ui-button-primary ui-button-medium sa-confirm disabled"));
 
         orderOne.click();
 
         waitTime(5000);
         
-        //WebElement btnLogIn = driver.findElement(By.className("signIn"));
-        //btnLogIn.click();
-
-
     }
     
     static public void waitTime(int time){
