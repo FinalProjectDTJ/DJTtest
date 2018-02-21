@@ -53,12 +53,22 @@ public class NewAccTest {
 
         waitTime(1000);
 
+        //-------------- try wrong password
         WebElement passWordVeri = driver.findElement(By.id("confirm-password-ipt"));
-        passWordVeri.sendKeys("password");
+        passWordVeri.sendKeys("abc12345");
 
         waitTime(1000);
 
         WebElement btnCreate = driver.findElement(By.id("submit-btn"));
+        btnCreate.click();
+        
+        waitTime(10000);
+        passWordVeri.clear();
+        waitTime(5000);
+        passWordVeri.sendKeys("password");
+        
+        waitTime(1000);
+
         btnCreate.click();
     
     }
