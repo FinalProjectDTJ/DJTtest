@@ -40,13 +40,58 @@ public class SignInTest {
         for(int i=0; i<3; i++) {
         	action.sendKeys(Keys.TAB).perform();
         }
-        action.sendKeys("sen632@nu.edu");
+
+        //----------------- test with right wrong username and any password
+
+        action.sendKeys("project@nu.edu");
         waitTime(1000);
         action.sendKeys(Keys.TAB).perform();
         
         waitTime(1000);
         
         WebElement passBox = driver.switchTo().activeElement();
+        passBox.sendKeys("abc1234");
+
+        waitTime(1000);
+        action.sendKeys(Keys.TAB).perform();
+        waitTime(1000);
+        action.sendKeys(Keys.ENTER).perform();
+
+        //----------------- test with right username and wrong password
+
+        waitTime(10000);
+        
+        for(int i=0; i<25; i++) {
+        	action.sendKeys(Keys.BACK_SPACE).perform();
+        }
+        
+        action.sendKeys("sen632@nu.edu");
+        waitTime(1000);
+        action.sendKeys(Keys.TAB).perform();
+        
+        waitTime(1000);
+        
+        passBox.sendKeys("password");
+
+        waitTime(1000);
+        action.sendKeys(Keys.TAB).perform();
+        waitTime(1000);
+        action.sendKeys(Keys.ENTER).perform();
+
+        //----------------- test with right username and password
+
+        waitTime(10000);
+        
+        for(int i=0; i<25; i++) {
+        	action.sendKeys(Keys.BACK_SPACE).perform();
+        }
+        
+        action.sendKeys("sen632@nu.edu");
+        waitTime(1000);
+        action.sendKeys(Keys.TAB).perform();
+        
+        waitTime(1000);
+        
         passBox.sendKeys("abc12345");
 
         waitTime(1000);
@@ -54,10 +99,6 @@ public class SignInTest {
         waitTime(1000);
         action.sendKeys(Keys.ENTER).perform();
 
-        //WebElement btnLogIn = driver.switchTo().activeElement();
-//        WebElement btnLogIn = driver.findElement(By.id("fm-login-submit"));
-        //btnLogIn.click();
-               
     
     }
     

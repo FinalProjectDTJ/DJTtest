@@ -34,7 +34,7 @@ public class NewAccTest {
         waitTime(5000);
 
         WebElement emailNew = driver.findElement(By.id("email-ipt"));
-        emailNew.sendKeys("sen635@nu.edu");
+        emailNew.sendKeys("djt_project@nu.edu");
         
         waitTime(1000);
 
