@@ -34,7 +34,13 @@ public class CheckOutTest {
         WebElement joinIt = driver.findElement(By.cssSelector("a[data-role='sign-link']"));
 
         joinIt.click();
-        
+
+        waitTime(5000);
+
+        WebElement signInBtn = driver.findElement(By.className("sign-btn"));
+
+        signInBtn.click();
+
         waitTime(5000);
 
         Actions action = new Actions(driver);
@@ -57,7 +63,13 @@ public class CheckOutTest {
         action.sendKeys(Keys.ENTER).perform();  	
         
         waitTime(20000);
+
         
+        WebElement xxxx = driver.findElement(By.className("close-layer"));
+        xxxx.click();
+
+        waitTime(2000);
+
         WebElement txtbox = driver.findElement(By.name("SearchText"));
 
         txtbox.sendKeys("bluetooth");
@@ -140,9 +152,9 @@ public class CheckOutTest {
 
         phoneBox.sendKeys("4085551234");
 
-        waitTime(3000);
+        waitTime(5000);
 
-        WebElement orderOne = driver.findElement(By.className("ui-button ui-button-primary ui-button-medium sa-confirm"));
+        WebElement orderOne = driver.findElement(By.partialLinkText("and ship")); //driver.findElement(By.className("ui-button ui-button-primary ui-button-medium sa-confirm"));
 
         orderOne.click();
 

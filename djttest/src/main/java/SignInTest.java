@@ -32,7 +32,13 @@ public class SignInTest {
         WebElement joinIt = driver.findElement(By.cssSelector("a[data-role='sign-link']"));
 
         joinIt.click();
-        
+
+        waitTime(5000);
+
+        WebElement signInBtn = driver.findElement(By.className("sign-btn"));
+
+        signInBtn.click();
+
         waitTime(5000);
 
         Actions action = new Actions(driver);
