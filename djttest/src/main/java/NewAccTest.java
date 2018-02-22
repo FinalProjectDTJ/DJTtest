@@ -33,6 +33,12 @@ public class NewAccTest {
         
         waitTime(5000);
 
+        WebElement joinBtn = driver.findElement(By.className("join-btn"));
+
+        joinBtn.click();
+
+        waitTime(5000);
+
         WebElement emailNew = driver.findElement(By.id("email-ipt"));
         emailNew.sendKeys("djt_project@nu.edu");
         
