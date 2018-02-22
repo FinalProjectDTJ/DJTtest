@@ -26,6 +26,8 @@
         Actions keyAction1 = new Actions(driver1);     
         keyAction1.keyDown(Keys.ALT).keyDown(Keys.SHIFT).sendKeys("z").keyUp(Keys.ALT).keyUp(Keys.SHIFT).perform();
 		
+        System.out.println("Open new window: " + driver1.getTitle());
+
 		waitTime(2000);
 		
 		

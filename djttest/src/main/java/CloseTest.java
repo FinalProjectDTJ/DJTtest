@@ -14,6 +14,7 @@
 		waitTime(2000);
 		
 		// Close browser
+        System.out.println("Will closes page " + driver.getTitle());
 		driver.close();
 
 	}

@@ -22,6 +22,8 @@
         
         waitTime(2000);
 		
+        System.out.println("Open a new tab to show ebay.com with JavaScript");
+
         ((JavascriptExecutor) driver).executeScript("window.open('http://www.ebay.com');");
         
 		waitTime(2000);
